@@ -1,12 +1,19 @@
-import Header from './Header';
-import Category from './Category';
 import AppContainer from './Asssignment/AppContainer';
+import {FormInput} from './FormInput';
+import Test from './Asssignment/Test';
+import './App.css';
+const App = () => {
+  const addContact = () =>{
 
-function App() {
+  }
+  const name = 'mindx';
+  const style = {
+    color: 'red'
+  };
   return (
-    <div className="App">
+    <>
       <AppContainer />
-    </div>
+    </>
   );
 }
 
