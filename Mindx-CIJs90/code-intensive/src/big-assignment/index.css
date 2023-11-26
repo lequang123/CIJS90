@@ -1,3 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.app-container{
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    max-width: 50%;
+}
+
+.add-form{
+    margin-bottom: 10px;
+}
+
+.add-btn{
+    margin-right: 10px !important;
+}
