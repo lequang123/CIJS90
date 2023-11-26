@@ -1,4 +1,4 @@
-import AppContainer from './lesson04-jsx-props/Appcontainer';
+import AppContainer from './big-assignment/components/Appcontainer';
 
 const App = () => {
   return (
