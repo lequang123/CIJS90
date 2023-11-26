@@ -4,6 +4,8 @@ import { Button, Form, Row, Col } from 'react-bootstrap';
 export default function AddForm() {
   const [isAdded, setisAdded] = useState(false);
   console.log(isAdded);
+
+  console.log('orgin master')
   return (
     <div>
       {
