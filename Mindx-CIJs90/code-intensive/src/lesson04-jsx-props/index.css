@@ -1,0 +1,12 @@
+.app-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .profile {
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 10px;
+  }

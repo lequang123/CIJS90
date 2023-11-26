@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts Management</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Contact Management</h2>
+
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="number">Number:</label>
+        <input type="text" id="number" required>
+        <button type="button" onclick="addContact()">Add Contact</button>
+        <button type="button" onclick="removeDuplicates()">Remove Duplicates</button>
+    </form>
+
+    <label for="search">Search:</label>
+    <input type="text" id="search" oninput="updateDisplayedContacts()">
+    
+    <h3>Contact List</h3>
+    <table id="contactTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody id="contactListBody"></tbody>
+    </table>
+
+    <script>
+        let contacts = [];
+
+        function addContact() {
+            const name = document.getElementById("name").value;
+            const number = document.getElementById("number").value;
+
+            if (name && number) {
+                const contact = { name, number };
+                contacts.push(contact);
+                updateDisplayedContacts();
+                clearForm();
+            }
+        }
+
+        function displayContacts(filteredContacts = contacts) {
+            const tableBody = document.getElementById("contactListBody");
+            tableBody.innerHTML = "";
+
+            filteredContacts.forEach(contact => {
+                const row = tableBody.insertRow();
+                const cellName = row.insertCell(0);
+                const cellNumber = row.insertCell(1);
+
+                cellName.innerHTML = contact.name;
+                cellNumber.innerHTML = contact.number;
+            });
+        }
+
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("number").value = "";
+        }
+
+        function searchContacts() {
+            const searchTerm = document.getElementById("search").value.toLowerCase();
+            return contacts.filter(contact =>
+                contact.name.toLowerCase().includes(searchTerm) ||
+                contact.number.toLowerCase().includes(searchTerm)
+            );
+        }
+
+        function updateDisplayedContacts() {
+            const filteredContacts = searchContacts();
+            displayContacts(filteredContacts);
+        }
+
+        function removeDuplicates() {
+            const uniqueContacts = contacts.filter((contact, index, self) =>
+                index === self.findIndex(c => c.name === contact.name && c.number === contact.number)
+            );
+            contacts = uniqueContacts;
+            updateDisplayedContacts();
+        }
+
+        // Initial display
+        displayContacts();
+    </script>
+
+</body>
+</html>

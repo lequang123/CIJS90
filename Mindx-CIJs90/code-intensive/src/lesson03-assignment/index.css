@@ -1,0 +1,78 @@
+.App {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .task-input {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .task-input input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .task-list li input[type="checkbox"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .task-list li input[type="checkbox"]:checked {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  .task-list li input[type="checkbox"]:checked::before {
+    content: '\2713';
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .task-input button:hover {
+    background-color: #45a049;
+  }
+  
+  .task-list {
+    margin-bottom: 20px;
+  }
+  
+  .task-list h2 {
+    margin-bottom: 10px;
+  }
+  
+  .task-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .task-list li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .task-list li input {
+    margin-right: 10px;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+  }
+  
+  .total-tasks {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
