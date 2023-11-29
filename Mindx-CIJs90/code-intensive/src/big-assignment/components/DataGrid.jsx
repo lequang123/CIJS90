@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 
-function DataGrid() {
+function DataGrid(props) {
   return (
     <Table striped bordered hover>
       <thead>
@@ -12,12 +13,18 @@ function DataGrid() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
+        {
+            props.listExpenseInfos.map((item, index) =>{
+              return (
+                <tr key={item.id}>
+                  <td>{index + 1}</td>
+                  <td>{item.name}</td>
+                  <td>{item.amount}</td>
+                  <td>{item.date}</td>
+                </tr>
+              )
+            })
+        }
       </tbody>
     </Table>
   );

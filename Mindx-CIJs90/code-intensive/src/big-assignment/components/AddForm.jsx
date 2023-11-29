@@ -3,23 +3,23 @@ import { Button, Form, Row, Col } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function AddForm() {
+export default function AddForm(props) {
   const initData = {name: '', amount: '', date: ''};
   const [isAdded, setIsAdded] = useState(false);
-  const [expenseInfo, setexpenseInfo] = useState(initData);
+  const [expenseInfo, setExpenseInfo] = useState(initData);
   const {name, amount, date} = expenseInfo;
 
   const handleChange = event =>{
     const {name, value} = event.target;
-    setexpenseInfo({...expenseInfo, [name]: value});
+    setExpenseInfo({...expenseInfo, [name]: value});
   };
   
   const handleAdd = () =>{
-    console.log(name);
     if(!name || !amount || !date){
       toast.error('empty name, please input name!')
     }else{
-      setexpenseInfo(initData);
+      props.handleAddExpenseInfo(expenseInfo);
+      setExpenseInfo(initData);
     }
   }
 
@@ -27,7 +27,7 @@ export default function AddForm() {
 
   const handleCancel = () =>{
     handleChangeStatusAdd();
-    setexpenseInfo(initData);
+    setExpenseInfo(initData);
   }
 
   return (
