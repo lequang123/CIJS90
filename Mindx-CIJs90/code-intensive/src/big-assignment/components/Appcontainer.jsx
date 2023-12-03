@@ -8,6 +8,7 @@ function Appcontainer() {
   const [listExpenseInfos, setListExpenseInfos] = useState([]);
 
   const handleAddExpenseInfo = expenseInfo =>{
+    console.log('appcontainer', expenseInfo);
     setListExpenseInfos([...listExpenseInfos, expenseInfo]);
   }
 

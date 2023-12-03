@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function AddForm(props) {
-  const initData = {name: '', amount: '', date: ''};
+  const initData = {name: '', amount: '', date: '', id: uuidv4()};
   const [isAdded, setIsAdded] = useState(false);
   const [expenseInfo, setExpenseInfo] = useState(initData);
   const {name, amount, date} = expenseInfo;
 
   const handleChange = event =>{
     const {name, value} = event.target;
-    setExpenseInfo({...expenseInfo, [name]: value});
+    setExpenseInfo({...expenseInfo, [name]: value, id: uuidv4()});
   };
   
   const handleAdd = () =>{
@@ -19,6 +20,10 @@ export default function AddForm(props) {
       toast.error('empty name, please input name!')
     }else{
       props.handleAddExpenseInfo(expenseInfo);
+      setExpenseInfo(() => {
+        return expenseInfo;
+      });
+
       setExpenseInfo(initData);
     }
   }
