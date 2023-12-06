@@ -6,16 +6,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Appcontainer() {
   const [listExpenseInfos, setListExpenseInfos] = useState([]);
+  const [editExpenseInfo, setEditExpenseInfo] = useState(null);
 
   const handleAddExpenseInfo = expenseInfo =>{
-    console.log('appcontainer', expenseInfo);
     setListExpenseInfos([...listExpenseInfos, expenseInfo]);
+  }
+
+  const handleEditExpenseInfo = editExpenseInfo =>{
+    console.log(editExpenseInfo);
+    setEditExpenseInfo(editExpenseInfo);
   }
 
   return (
     <div className="app-container">
-        <AddForm handleAddExpenseInfo={handleAddExpenseInfo}/>
-        <DataGrid listExpenseInfos={listExpenseInfos} />
+        <AddForm handleAddExpenseInfo={handleAddExpenseInfo} editExpenseInfo={editExpenseInfo}/>
+        <DataGrid 
+          listExpenseInfos={listExpenseInfos}
+          handleEditExpenseInfo={handleEditExpenseInfo}
+        />
     </div>
   )
 }

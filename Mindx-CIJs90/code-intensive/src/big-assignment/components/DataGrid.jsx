@@ -10,6 +10,7 @@ function DataGrid(props) {
           <th>Name</th>
           <th>Amount</th>
           <th>Date</th>
+          <th>Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,9 @@ function DataGrid(props) {
                   <td>{item.name}</td>
                   <td>{item.amount}</td>
                   <td>{item.date}</td>
+                  <td style={{textAlign: 'center'}}>
+                    <span class="fa fa-pencil-square-o" aria-hidden="true" onClick={() => props.handleEditExpenseInfo(item)}></span>
+                    </td>
                 </tr>
               )
             })
