@@ -16,9 +16,13 @@ function Appcontainer() {
     setEditExpenseInfo(editExpenseInfo);
   }
 
+  const handleEdit = editExpenseInfo =>{
+    setEditExpenseInfo(null);
+  }
+
   return (
     <div className="app-container">
-        <AddForm handleAddExpenseInfo={handleAddExpenseInfo} editExpenseInfo={editExpenseInfo}/>
+        <AddForm handleAddExpenseInfo={handleAddExpenseInfo} editExpenseInfo={editExpenseInfo} handleEdit={handleEdit}/>
         <DataGrid 
           listExpenseInfos={listExpenseInfos}
           handleEditExpenseInfo={handleEditExpenseInfo}

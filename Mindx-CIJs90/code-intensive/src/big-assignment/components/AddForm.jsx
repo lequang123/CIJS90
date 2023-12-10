@@ -11,11 +11,9 @@ export default function AddForm(props) {
   const { name, amount, date } = expenseInfo;
 
   useEffect(() => {
-   console.log('test');
    if(props.editExpenseInfo){
-    setExpenseInfo('data edit');
+    setExpenseInfo(props.editExpenseInfo);
    }
-
   }, [props.editExpenseInfo]);
 
   const handleChange = event => {
@@ -44,11 +42,8 @@ export default function AddForm(props) {
   }
 
   const handleEdit = () => {
-
+    props.handleEdit(expenseInfo);
   }
-
-  // const formValue = props.editExpenseInfo ? props.editExpenseInfo : expenseInfo;
-  // console.log(formValue);
 
   return (
     <div className='add-form'>
