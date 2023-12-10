@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,6 +9,14 @@ export default function AddForm(props) {
   const [isAdded, setIsAdded] = useState(false);
   const [expenseInfo, setExpenseInfo] = useState(initData);
   const { name, amount, date } = expenseInfo;
+
+  useEffect(() => {
+   console.log('test');
+   if(props.editExpenseInfo){
+    setExpenseInfo('data edit');
+   }
+
+  }, [props.editExpenseInfo]);
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -38,6 +46,9 @@ export default function AddForm(props) {
   const handleEdit = () => {
 
   }
+
+  // const formValue = props.editExpenseInfo ? props.editExpenseInfo : expenseInfo;
+  // console.log(formValue);
 
   return (
     <div className='add-form'>

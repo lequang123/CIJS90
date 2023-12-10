@@ -13,7 +13,6 @@ function Appcontainer() {
   }
 
   const handleEditExpenseInfo = editExpenseInfo =>{
-    console.log(editExpenseInfo);
     setEditExpenseInfo(editExpenseInfo);
   }
 
