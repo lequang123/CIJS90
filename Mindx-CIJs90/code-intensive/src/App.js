@@ -1,8 +1,8 @@
-import AppContainer from './big-assignment/components/Appcontainer';
+import Router from './lesson-10-routing/Router';
 
 const App = () => {
   return (
-      <AppContainer />
+      <Router />
   );
 }
 
