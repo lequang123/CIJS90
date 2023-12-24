@@ -4,34 +4,21 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Root, {Loader as RootLoader}  from "./Root";
+import Appcontainer from '../homePage/Appcontainer';
+import CreateEvent from '../event/CreateEvent';
+
 import ErrorPage from './ErrorPage';
-import Contact from './Contact';
-import Home from './Home';
-import CreateEvent from './CreateEvent';
 
 const router = createBrowserRouter([
   {
     path: '/home',  // thinh
-    element: <Home />,
+    element: <Appcontainer />,
     errorElement: <ErrorPage />,
-    //loader: RootLoader,
-    children: [
-      {
-        path: "contacts/:contactId",
-        element: <Contact />
-      }
-    ],
+
     path: '/createEvent',
     element: <CreateEvent />,
     errorElement: <ErrorPage />,
-    //loader: RootLoader,
-    children: [
-      {
-        path: "contacts/:contactId",
-        element: <Contact />
-      }
-    ]
+    
   }
 ]);
 
