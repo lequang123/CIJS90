@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './index.scss';
 
 export class Appcontainer extends Component {
   // change code

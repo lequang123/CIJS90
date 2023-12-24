@@ -2,6 +2,8 @@
 import TaskManager from './task-management-firebase/components/TaskManagement.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+console.log('test');
+
 const App = () => {
   return (
       <TaskManager />
