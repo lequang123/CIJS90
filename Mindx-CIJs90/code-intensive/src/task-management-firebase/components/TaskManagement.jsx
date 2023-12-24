@@ -21,6 +21,14 @@ function TaskManager() {
   // const isEqual = test1 === test2;
   // const isEqual2 = test3 === test4;
   // object, arr  prevDependency vs currentDependency
+
+  // mock api return data
+  // [{eventId: 1, eventName: 'test', location: 'missing', date: datetime.now}, time: '8:30']
+
+
+
+
+
   const [openAddModal, setOpenAddModal] = useState(false);
   const [tasks, setTasks] = useState([]);
 
