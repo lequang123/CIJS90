@@ -6,7 +6,7 @@ console.log('test');
 console.log('test1');
 console.log('test2');
 console.log('test4');
-
+console.log('only master has');
 
 var a = 1;
 var b = 2;
