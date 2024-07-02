@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 console.log('test');
 console.log('test1');
+console.log('test2');
+console.log('test4');
+
 
 var a = 1;
 var b = 2;
