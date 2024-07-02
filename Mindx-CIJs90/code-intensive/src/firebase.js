@@ -12,6 +12,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase and Firestore
+console.log('only branch c has');
+console.log('only branch c has');
+console.log('only branch c has');
+console.log('only branch c has');
+console.log('only branch c has');
+console.log('only branch c has');
+console.log('only branch c has');
+console.log('only branch c has');
 const app = initializeApp(firebaseConfig)
 
 const db = getFirestore(app)
